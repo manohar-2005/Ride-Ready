@@ -1,6 +1,5 @@
-# Ride-Ready
 
-## Welcome to RentalApp
+## Welcome to Ride-Ready
 Discover convenient vehicle rentals at your fingertips. Our platform connects vehicle owners with renters, offering a seamless and secure rental experience.
 
 ### Key Features:
