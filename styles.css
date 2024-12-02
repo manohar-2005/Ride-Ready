@@ -1,0 +1,291 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('/api/placeholder/1920/1080') center/cover no-repeat fixed;
+    color: white;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Logo Styling */
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(0, 123, 255, 0.9);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* Content Section Styling */
+.content-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    margin: 20px;
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Disclaimer Styling */
+.disclaimer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+}
+
+.disclaimer ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.disclaimer ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.disclaimer ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+/* Vehicle Grid Styling */
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.vehicle-grid .booking-option {
+    background: rgba(0, 123, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-grid .booking-option:hover {
+    transform: scale(1.05);
+    background: rgba(0, 123, 255, 0.3);
+}
+
+/* Membership Plans Styling */
+.membership-plans {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.plan {
+    background: rgba(0, 123, 255, 0.8);
+    padding: 25px;
+    border-radius: 12px;
+    width: calc(45% - 20px);
+    min-width: 280px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.plan:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+/* Steps Styling */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #28a745;
+}
+
+/* Form Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Emergency Assistance Styles */
+.emergency-container {
+    display: flex;
+    gap: 30px;
+    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+}
+
+.emergency-info {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.emergency-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.emergency-info ul li {
+    background: rgba(255,255,255,0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.emergency-contacts {
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.emergency-phone {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.emergency-form {
+    flex: 1;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.emergency-consent {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.emergency-consent input {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .emergency-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .membership-plans .plan,
+    .plan {
+        width: 100%;
+    }
+}

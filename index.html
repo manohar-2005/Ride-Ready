@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Ready - Vehicle Rental Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Ride Ready
+        </div>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="navigate('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('vehicles')">Vehicles</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('rent')">Rent</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('lend')">Lend</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('membership')">Membership</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('how-it-works')">How It Works</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('emergency')">Emergency</a></li>
+                <li><a href="javascript:void(0);" onclick="navigate('login')">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home-section" class="content-section">
+        <h1>Welcome to Ride Ready</h1>
+        <div class="disclaimer">
+            <p>Discover convenient vehicle rentals at your fingertips. Our platform connects vehicle owners with renters, offering a seamless and secure rental experience.</p>
+            <p>Key Features:</p>
+            <ul>
+                <li>Wide range of vehicles available</li>
+                <li>Flexible booking options</li>
+                <li>Secure and verified user profiles</li>
+                <li>Easy lending and renting process</li>
+                <li>24/7 Emergency Assistance</li>
+            </ul>
+            <p>Get started by exploring our vehicles or learning how it works!</p>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section id="vehicles-section" class="content-section" style="display: none;">
+        <h2>Available Vehicles</h2>
+        <div class="vehicle-grid">
+            <!-- Vehicle cards will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Rent Section -->
+    <section id="rent-section" class="content-section" style="display: none;">
+        <h2>Rent a Vehicle</h2>
+        <p>Browse and book vehicles in your area.</p>
+        <div class="booking-options">
+            <div class="booking-option">
+                <h3>Instant Booking</h3>
+                <p>Get your vehicle right now!</p>
+                <button onclick="startBooking('instant')">Book Now</button>
+            </div>
+            <div class="booking-option">
+                <h3>Pre Booking</h3>
+                <p>Plan ahead and save!</p>
+                <button onclick="startBooking('pre')">Schedule Later</button>
+            </div>
+        </div>
+        <button onclick="navigateToVehicles()">View Vehicles</button>
+    </section>
+
+    <!-- Lend Section -->
+    <section id="lend-section" class="content-section" style="display: none;">
+        <h2>Lend Your Vehicle</h2>
+        <form id="lend-bike-form">
+            <label for="bike-name">Vehicle Name:</label>
+            <input type="text" id="bike-name" name="bike-name" placeholder="Enter your vehicle's name" required>
+
+            <label for="bike-type">Vehicle Type:</label>
+            <input type="text" id="bike-type" name="bike-type" placeholder="Enter your vehicle's type" required>
+
+            <label for="price-per-day">Price per Day:</label>
+            <input type="number" id="price-per-day" name="price-per-day" placeholder="Enter price per day" required>
+
+            <label for="vehicle-condition">Vehicle Condition:</label>
+            <select id="vehicle-condition" required>
+                <option value="">Select Condition</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+            </select>
+
+            <label for="vehicle-documents">Upload Vehicle Documents:</label>
+            <input type="file" id="vehicle-documents" accept=".pdf,.jpg,.jpeg,.png" required>
+
+            <button type="submit">Submit Vehicle Listing</button>
+        </form>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership-section" class="content-section" style="display: none;">
+        <h2>Membership Plans</h2>
+        <div class="membership-plans">
+            <div class="plan">
+                <h3>Basic Plan</h3>
+                <p>Allows lending up to 2 vehicles.</p>
+                <p>30% commission for the platform.</p>
+                <ul>
+                    <li>Basic profile verification</li>
+                    <li>Standard support</li>
+                </ul>
+                <button onclick="signUpForPlan('basic')">Sign Up</button>
+            </div>
+            <div class="plan">
+                <h3>Premium Plan</h3>
+                <p>Unlimited vehicles for lending.</p>
+                <p>20% commission for the platform.</p>
+                <ul>
+                    <li>Advanced profile verification</li>
+                    <li>Priority support</li>
+                    <li>Additional insurance coverage</li>
+                </ul>
+                <button onclick="signUpForPlan('premium')">Sign Up</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works-section" class="content-section" style="display: none;">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>Step 1: Sign Up</h3>
+                <p>First, you need to sign up either as a renter or a lender. Provide your details and verify your documents. Choose a membership plan if you wish to lend vehicles.</p>
+            </div>
+            <div class="step">
+                <h3>Step 2: Renting a Vehicle</h3>
+                <p>If you're a renter, browse through the available vehicles in your area. Select the vehicle you want, book it, and proceed with payment. You can also opt for emergency assistance if needed.</p>
+            </div>
+            <div class="step">
+                <h3>Step 3: Lending a Vehicle</h3>
+                <p>If you're a vehicle owner, you can lend your vehicle by listing it on our platform. Once it's approved, others can rent it. Earn money from the rentals, and track your earnings.</p>
+            </div>
+            <div class="step">
+                <h3>Step 4: Emergency Assistance</h3>
+                <p>If you're renting a vehicle, you can request emergency help in case of an issue like a breakdown or medical emergency. Simply fill in the form, and our support team will assist you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Assistance Section -->
+    <section id="emergency-section" class="content-section" style="display: none;">
+        <h2>Emergency Assistance</h2>
+        <div class="emergency-container">
+            <div class="emergency-info">
+                <h3>Urgent Help When You Need It Most</h3>
+                <p>If you're experiencing any of the following situations during your rental:</p>
+                <ul>
+                    <li>Vehicle Breakdown</li>
+                    <li>Medical Emergency</li>
+                    <li>Accident</li>
+                    <li>Safety Concerns</li>
+                    <li>Roadside Assistance</li>
+                </ul>
+                <div class="emergency-contacts">
+                    <h4>Immediate Helpline:</h4>
+                    <p class="emergency-phone">+91 8590813497   +91 9390773979 </p>
+                    <p class="emergency-note">* Available 24/7 * Immediate Response Guaranteed</p>
+                </div>
+            </div>
+            <form id="emergency-form" class="emergency-form">
+                <h3>Emergency Assistance Request</h3>
+                <select id="emergency-type" required>
+                    <option value="">Select Emergency Type</option>
+                    <option value="breakdown">Vehicle Breakdown</option>
+                    <option value="medical">Medical Emergency</option>
+                    <option value="accident">Accident</option>
+                    <option value="safety">Safety Concern</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <input type="text" id="emergency-location" placeholder="Your Current Location" required>
+                
+                <input type="text" id="emergency-rental-id" placeholder="Rental Vehicle ID (if applicable)">
+                
+                <textarea id="emergency-details" placeholder="Provide detailed description of your emergency" required></textarea>
+                
+                <div class="emergency-contact-info">
+                    <input type="text" id="emergency-name" placeholder="Your Name" required>
+                    <input type="tel" id="emergency-phone" placeholder="Contact Number" required>
+                </div>
+
+                <div class="emergency-consent">
+                    <input type="checkbox" id="emergency-consent" required>
+                    <label for="emergency-consent">I understand this is an emergency request and authorize immediate assistance</label>
+                </div>
+
+                <button type="submit" class="emergency-submit">Request Immediate Assistance</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login-section" class="content-section" style="display: none;">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="navigate('register')">Register here</a></p>
+    </section>
+
+    <!-- Register Section -->
+    <section id="register-section" class="content-section" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="text" id="register-name" placeholder="Full Name" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            
+            <div class="document-upload">
+                <h3>Required Documents</h3>
+                <label>
+                    Aadhar Card
+                    <input type="file" id="register-aadhar" accept=".pdf,.jpg,.jpeg,.png" required>
+                </label>
+                <label>
+                    PAN Card
+                    <input type="file" id="register-pan" accept=".pdf,.jpg,.jpeg,.png" required>
+                </label>
+                <label>
+                    Driving License
+                    <input type="file" id="register-license" accept=".pdf,.jpg,.jpeg,.png" required>
+                </label>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
